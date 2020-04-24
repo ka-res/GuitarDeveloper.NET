@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Client", "GuitarDeveloper.NET.Client\GuitarDeveloper.NET.Client.csproj", "{417B76D5-A692-4654-B973-6FFE4846EECA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Server", "GuitarDeveloper.NET.Server\GuitarDeveloper.NET.Server.csproj", "{6C85A164-38EC-4E31-A022-106E27BC7C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Repositories", "GuitarDeveloper.NET.Repositories\GuitarDeveloper.NET.Repositories.csproj", "{B2E74AAA-D711-4957-A497-A825A6B28901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Services", "GuitarDeveloper.NET.Services\GuitarDeveloper.NET.Services.csproj", "{E81A63CD-25A1-4990-8370-F84C16487904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Models", "GuitarDeveloper.NET.Models\GuitarDeveloper.NET.Models.csproj", "{F6E55095-51F1-4E2B-BCDB-BDFFC634BC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Tests", "GuitarDeveloper.NET.Tests\GuitarDeveloper.NET.Tests.csproj", "{C83B628A-8ABE-4FEF-825C-489DA0E9E75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuitarDeveloper.NET.Common", "GuitarDeveloper.NET.Common\GuitarDeveloper.NET.Common.csproj", "{79B114D9-6D0A-4B04-BD78-05701000C2A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{417B76D5-A692-4654-B973-6FFE4846EECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417B76D5-A692-4654-B973-6FFE4846EECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417B76D5-A692-4654-B973-6FFE4846EECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417B76D5-A692-4654-B973-6FFE4846EECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C85A164-38EC-4E31-A022-106E27BC7C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C85A164-38EC-4E31-A022-106E27BC7C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C85A164-38EC-4E31-A022-106E27BC7C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C85A164-38EC-4E31-A022-106E27BC7C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E74AAA-D711-4957-A497-A825A6B28901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E74AAA-D711-4957-A497-A825A6B28901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E74AAA-D711-4957-A497-A825A6B28901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E74AAA-D711-4957-A497-A825A6B28901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81A63CD-25A1-4990-8370-F84C16487904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81A63CD-25A1-4990-8370-F84C16487904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81A63CD-25A1-4990-8370-F84C16487904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81A63CD-25A1-4990-8370-F84C16487904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E55095-51F1-4E2B-BCDB-BDFFC634BC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E55095-51F1-4E2B-BCDB-BDFFC634BC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E55095-51F1-4E2B-BCDB-BDFFC634BC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E55095-51F1-4E2B-BCDB-BDFFC634BC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83B628A-8ABE-4FEF-825C-489DA0E9E75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83B628A-8ABE-4FEF-825C-489DA0E9E75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83B628A-8ABE-4FEF-825C-489DA0E9E75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83B628A-8ABE-4FEF-825C-489DA0E9E75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B114D9-6D0A-4B04-BD78-05701000C2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B114D9-6D0A-4B04-BD78-05701000C2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B114D9-6D0A-4B04-BD78-05701000C2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B114D9-6D0A-4B04-BD78-05701000C2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED822E63-8A27-4461-A966-4397F540C49B}
+	EndGlobalSection
+EndGlobal
