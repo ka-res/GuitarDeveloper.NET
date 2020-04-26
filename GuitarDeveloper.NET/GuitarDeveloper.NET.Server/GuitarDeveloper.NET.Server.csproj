@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\GuitarDeveloper.NET.Models\GuitarDeveloper.NET.Models.csproj" />
   </ItemGroup>
 
 

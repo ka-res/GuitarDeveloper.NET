@@ -10,6 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,87 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\ng-inputs\declarations.ts" />
+    <None Remove="ClientApp\src\app\ng-inputs\imports.ts" />
+    <None Remove="ClientApp\src\app\ng-inputs\providers.ts" />
+    <None Remove="ClientApp\src\app\ng-inputs\routes.ts" />
+    <None Remove="ClientApp\src\app\shared\components\dialog\dialog.component.ts" />
+    <None Remove="ClientApp\src\app\shared\components\formAction\form-action.component.ts" />
+    <None Remove="ClientApp\src\app\shared\interceptor\interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\locales\customTranslateHttpLoader.ts" />
+    <None Remove="ClientApp\src\app\shared\notifications\enums.ts" />
+    <None Remove="ClientApp\src\app\shared\notifications\notifierOptions.ts" />
+    <None Remove="ClientApp\src\app\shared\others\extensions.ts" />
+    <None Remove="ClientApp\src\app\shared\others\helpers.ts" />
+    <None Remove="ClientApp\src\app\shared\others\pipes.ts" />
+    <None Remove="ClientApp\src\app\shared\others\tools.ts" />
+    <None Remove="ClientApp\src\app\shared\services\commonService.ts" />
+    <None Remove="ClientApp\src\assets\favicon.ico" />
+    <None Remove="ClientApp\src\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\src\assets\favicon.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\favicon.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\shared\models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\declarations.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\imports.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\providers.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\dialog\dialog.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\formAction\form-action.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interceptor\interceptor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\locales\customTranslateHttpLoader.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\notifications\enums.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\notifications\notifierOptions.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\others\helpers.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\others\tools.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\others\pipes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\others\extensions.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\commonService.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

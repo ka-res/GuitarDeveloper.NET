@@ -1,12 +1,13 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": "./",
     "module": "esnext",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "allowJs": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2015",
@@ -16,6 +17,8 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "watch": true,
+    "skipLibCheck": true
   }
 }

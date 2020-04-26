@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +20,13 @@ namespace GuitarDeveloper.NET.Client
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services
+                .AddMvc(configuration =>
+                 {
+                     // TODO added to match usemvc in method below
+                     configuration.EnableEndpointRouting = false;
+                 })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -43,19 +49,30 @@ namespace GuitarDeveloper.NET.Client
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                RequestPath = "/ClientApp/dist"
+            });
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
 
-            app.UseRouting();
+            // TODO check
+            //app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller}/{action=Index}/{id?}");
+            //});
+
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    template: "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>

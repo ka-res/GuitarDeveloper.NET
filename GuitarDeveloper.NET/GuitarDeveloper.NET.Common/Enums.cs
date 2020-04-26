@@ -1,0 +1,4 @@
+﻿namespace GuitarDeveloper.NET.Common
+{
+    
+}
