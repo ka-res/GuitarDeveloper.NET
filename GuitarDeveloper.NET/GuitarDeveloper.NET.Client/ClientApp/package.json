@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "version": "ng version",
+    "update": "ng update",
+    "update:cli-core": "ng update @angular/cli @angular/core",
     "start:prod-pl": "ng serve --configuration=prod-pl",
     "start:prod-en": "ng serve --configuration=prod-en",
     "start:debug-pl": "ng serve --configuration=debug-pl",
@@ -73,7 +76,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.24",
-    "@angular/cli": "8.3.14",
+    "@angular/cli": "^9.1.3",
     "@angular/compiler-cli": "8.2.12",
     "@angular/language-service": "8.2.12",
     "@types/jasmine": "~3.4.4",
