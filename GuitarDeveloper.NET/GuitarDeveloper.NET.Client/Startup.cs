@@ -21,11 +21,13 @@ namespace GuitarDeveloper.NET.Client
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddMvc(configuration =>
-                 {
-                     // TODO added to match usemvc in method below
-                     configuration.EnableEndpointRouting = false;
-                 })
+                .AddMvc(
+                //configuration =>
+                // {
+                //     // TODO added to match usemvc in method below
+                //     configuration.EnableEndpointRouting = false;
+                // }
+                 )
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -53,27 +55,26 @@ namespace GuitarDeveloper.NET.Client
             {
                 RequestPath = "/ClientApp/dist"
             });
-            if (!env.IsDevelopment())
+
+            app.UseSpaStaticFiles();
+
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
             {
-                app.UseSpaStaticFiles();
-            }
-
-            // TODO check
-            //app.UseRouting();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller}/{action=Index}/{id?}");
-            //});
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
+
+            // TODO old
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller}/{action=Index}/{id?}");
+            //});
 
             app.UseSpa(spa =>
             {
@@ -84,7 +85,7 @@ namespace GuitarDeveloper.NET.Client
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseAngularCliServer(npmScript: "start:debug-pl");
                 }
             });
         }

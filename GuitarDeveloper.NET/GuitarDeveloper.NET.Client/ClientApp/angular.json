@@ -25,20 +25,29 @@
               "src/assets/favicon.ico"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/angular-notifier/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/jquery-3.4.1.slim.min.js",
+              "src/popper.min.js",
+              "src/bootstrap.min.js"
+            ]
           },
           "configurations": {
-            "production": {
+            "prod-pl": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.prod.pl.ts"
                 }
               ],
-              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -46,7 +55,61 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "outputPath": "dist/pl",
+              "i18nFile": "src/locales/messages.pl.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "pl",
+              "i18nMissingTranslation": "error"
+            },
+            "prod-en": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.en.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/en",
+              "i18nFile": "src/locales/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "debug-pl": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.debug.pl.ts"
+                }
+              ],
+              "aot": true,
+              "outputPath": "dist/pl",
+              "i18nFile": "src/locales/messages.pl.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "pl",
+              "i18nMissingTranslation": "error"
+            },
+            "debug-en": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.debug.en.ts"
+                }
+              ],
+              "aot": true,
+              "outputPath": "dist/en",
+              "i18nFile": "src/locales/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -56,8 +119,17 @@
             "browserTarget": "GuitarDeveloper.NET.Client:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "GuitarDeveloper.NET.Client:build:production"
+            "prod-pl": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:prod-pl"
+            },
+            "prod-en": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:prod-en"
+            },
+            "debug-pl": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:debug-pl"
+            },
+            "debug-en": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:debug-en"
             }
           }
         },
@@ -65,6 +137,20 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "GuitarDeveloper.NET.Client:build"
+          },
+          "configurations": {
+            "prod-pl": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:prod-pl"
+            },
+            "prod-en": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:prod-en"
+            },
+            "debug-pl": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:debug-pl"
+            },
+            "debug-en": {
+              "browserTarget": "GuitarDeveloper.NET.Client:build:debug-en"
+            }
           }
         },
         "test": {
@@ -74,16 +160,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": ["src/styles.css"],
+            "styles": [ "src/styles.css" ],
             "scripts": [],
-            "assets": ["src/assets"]
+            "assets": [ "src/assets" ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [ "src/tsconfig.app.json", "src/tsconfig.spec.json" ],
+            "exclude": [ "**/node_modules/**" ]
           }
         },
         "server": {
@@ -129,7 +215,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [ "**/node_modules/**" ]
           }
         }
       }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Configuration } from './app.configuration';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',

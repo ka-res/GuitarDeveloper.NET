@@ -1,23 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-
+import { NgModule, LOCALE_ID } from '@angular/core';
 import '@progress/kendo-angular-intl/locales/pl/all';
 import '@progress/kendo-angular-intl/locales/en/all';
 import { registerLocaleData } from '@angular/common';
-import { TimeInterceptor, defaultTimeout as DEFAULT_TIMEOUT } from './shared/interceptor/interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { defaultTimeout as DEFAULT_TIMEOUT, TimeoutInterceptor, UploadInterceptor } from './shared/interceptor/interceptor';
 import localePl from '@angular/common/locales/pl';
 import { declarations } from './ng-inputs/declarations';
 import { imports } from './ng-inputs/imports'
 import { providers } from './ng-inputs/providers'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Location } from '@angular/common';
+import { LocalizeRouterConfigLoader } from 'localize-router';
 
 registerLocaleData(localePl);
 
@@ -27,16 +21,13 @@ registerLocaleData(localePl);
   ],
   imports: [
     imports
-    //BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    //HttpClientModule,
-    //FormsModule,
-    //RouterModule.forRoot([
-    //  { path: '', component: HomeComponent, pathMatch: 'full' },
-    //  { path: 'counter', component: CounterComponent },
-    //  { path: 'fetch-data', component: FetchDataComponent },
-    //])
   ],
   providers: [
+    [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
+    [{ provide: HTTP_INTERCEPTORS, useClass: UploadInterceptor, multi: true }],
+    [{ provide: LOCALE_ID, useValue: environment.language }],
+    [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }],
+    Location,
     providers
   ],
   bootstrap: [
