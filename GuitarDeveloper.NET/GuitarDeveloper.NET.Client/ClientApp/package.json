@@ -5,7 +5,7 @@
     "ng": "ng",
     "version": "ng version",
     "update": "ng update",
-    "update:cli-core": "ng update @angular/cli @angular/core",
+    "update:cli-core": "ng update @angular/cli @angular/core --force",
     "start:prod-pl": "ng serve --configuration=prod-pl",
     "start:prod-en": "ng serve --configuration=prod-en",
     "start:debug-pl": "ng serve --configuration=debug-pl",
