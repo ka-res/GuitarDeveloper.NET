@@ -1,5 +1,6 @@
 {
   "compileOnSave": true,
+  "skipLibCheck": true,
   "compilerOptions": {
     "baseUrl": "./",
     "module": "esnext",
