@@ -1,44 +1,66 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+       style="position: fixed;top:0;width:100%;z-index:100">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">GuitarDeveloper.NET.Client</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+      <img src="assets/favicon.ico" width="24px" height="24px" alt="" />
+      <p style="width: 7px"></p>
+      <a class="navbar-brand" [routerLink]="['/']" style="white-space: nowrap"><b>GuitarDeveloper.NET</b></a>
+      <div *ngIf="version">
+        <a class="navbar-brand" style="font-size: 76%; color: darkgray;margin-left: 10px">{{userName}}</a>
+      </div>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"  
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-        </ul>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+           [ngClass]="{ show: isExpanded }">
+        <div *ngIf="!menuVisible">
+          <ul class="navbar-nav flex-grow">
+            <div *ngIf="menuTextVisible">
+              <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" style="font-size: 14px" [routerLink]="[currentLanguage, 'home']">
+                  <i class="fas fa-guitar" aria-hidden="true" style="margin-right: 6px"></i>
+                  <span>Progress</span>
+                </a>
+              </li>
+            </div>
+            <div *ngIf="!menuTextVisible">
+              <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" style="font-size: 14px" [routerLink]="[currentLanguage, 'home']">
+                  <i class="fas fa-guitar" aria-hidden="true" style="margin-right: 6px"></i>
+                </a>
+              </li>
+            </div>
+            <div *ngIf="menuTextVisible">
+              <li class="nav-item dropdown" [routerLinkActive]='["link-active"]'>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 14px">
+                  <i class="fas fa-record-vinyl" aria-hidden="true" style="margin-right: 6px"></i>
+                  <span>Metarials</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right pre-scrollable">
+                  <a class="dropdown-item nav-item" style="font-size: 80%" [routerLink]="[currentLanguage, 'home']">Jea!</a>
+                </div>
+              </li>
+            </div>
+            <div *ngIf="!menuTextVisible">
+              <li class="nav-item dropdown" [routerLinkActive]='["link-active"]'>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 14px">
+                  <i class="fas fa-record-vinyl" aria-hidden="true" style="margin-right: 6px"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right pre-scrollable">
+                  <a class="dropdown-item nav-item" style="font-size: 80%" [routerLink]="[currentLanguage, 'home']">Jea!</a>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+<!-- TODO for language: [routerLink]="['']" i (click)="changeLanguage('pl') oraz nazwy w danych jezykach" -->

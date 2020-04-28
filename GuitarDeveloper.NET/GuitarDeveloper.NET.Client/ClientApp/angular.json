@@ -29,15 +29,15 @@
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css",
               "node_modules/angular-notifier/styles.scss",
-              "node_modules/font-awesome/css/font-awesome.css",
-              "src/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/all.css",
+              "src/styles.css"
             ],
             "scripts": [
-              "src/jquery-3.4.1.slim.min.js",
-              "src/popper.min.js",
-              "src/bootstrap.min.js"
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

@@ -1,5 +1,327 @@
 /* You can add global styles to this file, and also import other style files */
+.notifier__notificiation--success {
+  background-color: rgb(153, 117, 101) !important;
+  opacity: 0.82;
+  color: #ffffff !important
+}
 
+.notifier__notificiation--info {
+  background-color: #808080 !important;
+  opacity: 0.82;
+  color: #ffffff !important
+}
+
+.notifier__notificiation--stat {
+  background-color: #daa520 !important;
+  opacity: 0.82;
+  color: #ffffff !important
+}
+
+.notifier__notificiation--warn {
+  background-color: #ff8000 !important;
+  opacity: 0.82;
+  color: #ffffff !important
+}
+
+.dropdown-item:hover {
+  background-color: rgb(153, 117, 101);
+  color: #ffffff;
+}
+
+input, textarea {
+  width: 100%;
+  display: block;
+  max-width: 768px;
+}
+
+.divTable {
+  display: table;
+  width: 100%;
+}
+
+.divTableRow {
+  display: table-row;
+}
+
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+}
+
+.divTableCell, .divTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+}
+
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+  font-weight: bold;
+}
+
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+
+.divTableBody {
+  display: table-row-group;
+}
+
+.divTableCellLabel {
+  width: 20%;
+}
+
+.divTableCellControl {
+  width: 70%;
+}
+
+.divTableCellPartialCOntrol {
+  width: 35%;
+}
+
+.k-grid, .k-grid-header, .k-header, .k-link {
+  height: auto;
+}
+
+.k-grid, .k-grid-header, .k-header {
+  white-space: normal;
+}
+
+.divTableCellDetailsLabel {
+  width: 30%;
+}
+
+.divTableCellDetailsValue {
+  width: 70%;
+}
+
+.k-pager-number .k-link {
+  color: #868686 !important;
+}
+
+.k-pager-numbers .k-state-selected {
+  color: #fff !important;
+  background-color: #868686 !important;
+}
+
+.k-pager-nav:hover {
+  color: rgb(153, 117, 101) !important;
+}
+
+.k-widget ::selection,
+.k-block::selection,
+.k-panel::selection {
+  background-color: #6688aa !important;
+  color: #fff;
+}
+
+.k-grid-header .k-i-sort-asc-sm,
+.k-grid-header .k-i-sort-desc-sm,
+.k-grid-header .k-i-sort-order {
+  color: rgb(153, 117, 101) !important;
+}
+
+.k-button.k-primary {
+  box-shadow: none !important;
+}
+
+.k-textbox::selection,
+.k-input::selection,
+.k-textarea::selection {
+  background-color: rgb(153, 117, 101) !important;
+  color: #fff;
+}
+
+.k-state-selected .k-state-focused {
+  background-color: rgb(153, 117, 101) !important;
+}
+
+.k-callout {
+  color: rgb(153, 117, 101) !important;
+  background-color: transparent !important;
+}
+
+.k-tooltip {
+  background-color: rgb(153, 117, 101) !important;
+  color: white !important;
+}
+
+k-checkbox-label:hover::after {
+  color: rgb(153, 117, 101) !important;
+  box-shadow: none !important;
+}
+
+*.focus {
+  outline: none !important;
+  border: 0 !important;
+}
+
+.k-checkbox:active,
+.k-checkbox.active {
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.k-checkbox:indeterminate + .k-checkbox-label::after {
+  background-color: rgb(153, 117, 101) !important;
+}
+
+.k-checkbox:checked + .k-checkbox-label::before {
+  border-color: #808080 !important;
+  background-color: rgb(153, 117, 101) !important;
+}
+
+.k-grid td.k-state-selected,
+.k-grid td.k-state-selected > td {
+  color: #656565 !important;
+  background-color: rgba(0, 81, 160, 0.10) !important;
+}
+
+.k-widget::selection,
+.k-block::selection,
+.k-panel::selection {
+  background-color: rgb(153, 117, 101) !important;
+  color: #fff;
+}
+
+pre {
+  font-family: -apple-system, BLinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  color: #656565;
+  text-align: left;
+}
+
+k.-radio:checked + .k-radio-label::before {
+  border-color: rgb(153, 117, 101) !important;
+  background-color: rgb(153, 117, 101) !important;
+}
+
+.gd-footer {
+  font-family: -apple-system, BLinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 12px;
+  color: #8f8f8f !important;
+}
+
+.gd-resp-textarea {
+  width: 14em !important;
+  float: right !important;
+  font-weight: lighter;
+}
+
+.gd-semi-header-up {
+  color: rgb(176, 176, 176);
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.gd-semi-header-any {
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.pre-scrollable {
+  max-height: 240px !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+}
+
+.k-multiselect-wrap {
+  max-width: 174px !important;
+}
+
+.k-drop-down-wrap {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.gd-bold-label {
+  font-weight: bold;
+}
+
+.gd-detail-margins {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.gd-buttons-group-margins {
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+
+.gd-buttons-group-margins-details {
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+#gd-toggle-criteria-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gd-toggle-horiz-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.gd-toggle-criteria-button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.gd-disable-bottom-padding {
+  padding-bottom: 0 !important;
+}
+
+.gd-10-bottom-set {
+  margin-bottom: 10px;
+}
+
+.gd-criteria-down-toggle {
+  font-size: 32px !important;
+  font-stretch: ultra-expanded !important;
+  color: rgba(0, 0, 0, 0.1) !important;
+  text-shadow: 0px -7px 7px rgba(0, 0, 0, 0.091) !important;
+}
+
+.gd-criteria-up-toggle {
+  font-size: 32px !important;
+  font-stretch: ultra-expanded !important;
+  color: rgba(0, 0, 0, 0.1) !important;
+  text-shadow: 0px 7px 7px rgba(0, 0, 0, 0.091) !important;
+}
+
+.gd-upload {
+  background: transparent !important;
+  border: transparent !important;
+}
+
+.k-list .k-item.k-state-selected, .k-list-optionlabel.k-state-selected, .k-list-container .k-button:active, .k-list-container .k-button.k-state-active, .k-column-menu .k-menu:not(.k-context-menu) .k-item.k-state-selected, .k-spreadsheet-popup .k-button:active, .k-spreadsheet-popup .k-button.k-state-active, .k-spreadsheet-popup .k-button.k-state-selected, .k-menu-group .k-item.k-state-selected, .k-menu.k-context-menu .k-item.k-state-selected {
+  background-color: rgb(153, 117, 101) !important;
+}
+
+.k-panelbar > .k-item > .k-link {
+  color: #8f8f8f !important;
+}
+
+  .k-panelbar > .k-item > .k-link.k-state-selected {
+    color: #fff !important;
+    background-color: rgb(153, 117, 101) !important;
+  }
+
+.k-panelbar > .k-item > .k-link {
+  color: #8f8f8f !important;
+}
+
+  .k-panelbar > .k-item > .k-link.k-state-selected {
+    color: #fff !important;
+    background-color: rgb(153, 117, 101) !important;
+  }
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
