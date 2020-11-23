@@ -1,0 +1,90 @@
+<div>
+  <h4>Resources</h4>
+</div>
+<div style="height: 10px"></div>
+<div class="k-block k-shadow gd-10-bottom-set">
+  <form [formGroup]="criteriaForm" (ngSubmit)="onSubmit()" class="k-form-inline gd-disable-bottom-padding">
+    <fieldset style="width: 100%">
+      <legend>Criteria</legend>
+      <div class="container-fluid">
+        <div *ngIf="showCriteria">
+          <div class="row">
+            <div class="col gd-10-bottom-set">
+              <div class="k-form-field">
+                <span>Name</span>
+                <div [ngClass]="{ 'has-error': isSubmitted && formControls.name.errors }">
+                  <input kendoTextBox placeholder="Enter name..." formControlName="name" />
+                </div>
+              </div>
+            </div>
+            <div class="col gd-10-bottom-set">
+              <div class="k-form-field">
+                <span>Value</span>
+                <div [ngClass]="{ 'has-error': isSubmitted && formControls.value.errors }">
+                  <input kendoTextBox placeholder="Enter value..." formControlName="value" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gd-buttons-group-margins">
+            <div class="row">
+              <div id="gd-toggle-horiz-wrapper" class="col">
+                <button type="reset" style="margin-right: 8px"
+                        class="k-button">Clear</button>
+                <button type="submit" class="k-button k-primary" style="background-color: rgb(153, 117, 101);border-color: rgb(153, 117, 101)">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="gd-toggle-criteria-wrapper" class="col-lg-12">
+          <button type="button" (click)="onToggleCriteriaClick()" class="gd-toggle-criteria-button">
+            <div *ngIf="!showCriteria">
+              <i class="fa fa-angle-double-down gd-criteria-down-toggle" aria-hidden="true"></i>
+            </div>
+            <div *ngIf="showCriteria">
+              <i class="fa fa-angle-double-up gd-criteria-up-toggle" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+    </fieldset>
+  </form>
+</div>
+
+<ng-template #template let-anchor>
+  <span>{{anchor.nativeElement.innerText}}</span>
+</ng-template>
+
+<div kendoTooltip
+     showOn="none"
+     [tooltipTemplate]="template"
+     filter=".k-grid td"
+     (mouseover)="showTooltip($event)">
+  <div class="k-block k-shadow">
+    <div style="margin: 10px">
+      <kendo-grid [data]="gridView"
+                  [loading]="loading"
+                  [resizable]="true"
+                  [pageSize]="pageSize"
+                  [skip]="skip"
+                  [pageable]="true"
+                  [pageChange]="pageChange($event)"
+                  [sortable]="{
+                    allowUnsort: 'true',
+                    mode: 'single'
+                  }"
+                  [sort]="sort"
+                  (sortChange)="sortChange($event)">
+        <ng-template kendoGridToolbarTemplate>
+          <button type="button" kendoGridExcelCommand icon="file-excel">Export to Excel</button>
+        </ng-template>
+        <kendo-grid-column field="id" title="ID" [hidden]="true">
+        </kendo-grid-column>
+        <!--<kendo-grid-column field="name" title="{{ 'RESOURCES.name' | translate}}" [hidden]="true">
+        </kendo-grid-column>-->
+        <div *kendoGridDetailTemplate="let dataItem">
+          <!-- template with input param of dataItem.id or similiar -->
+        </div>
+        <kendo-grid-excel [fileName]="fileName"></kendo-grid-excel>
+      </kendo-grid>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="k-block k-shadow gd-10-bottom-set" *ngIf="!isAdding">
+  <form class="k-form-inline">
+    <fieldset>
+      <legend>Actions</legend>
+      <div style="display:inline-block;float:right">
+        <button type="button" class="k-button" [disabled]="isAdding" (click)="onDictionaryEntryAdding()">Add value</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<!-- form, anchor, tooltip, grid -->

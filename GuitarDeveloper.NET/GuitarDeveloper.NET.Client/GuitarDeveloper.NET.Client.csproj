@@ -25,10 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\dictionaries\common\dictionaryHelpers.ts" />
+    <None Remove="ClientApp\src\app\dictionaries\common\enums.ts" />
     <None Remove="ClientApp\src\app\ng-inputs\declarations.ts" />
     <None Remove="ClientApp\src\app\ng-inputs\imports.ts" />
     <None Remove="ClientApp\src\app\ng-inputs\providers.ts" />
     <None Remove="ClientApp\src\app\ng-inputs\routes.ts" />
+    <None Remove="ClientApp\src\app\resources\services\resourceService.ts" />
     <None Remove="ClientApp\src\app\shared\components\dialog\dialog.component.ts" />
     <None Remove="ClientApp\src\app\shared\components\formAction\form-action.component.ts" />
     <None Remove="ClientApp\src\app\shared\interceptor\interceptor.ts" />
@@ -69,6 +72,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\dictionaries\common\dictionaryHelpers.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\dictionaries\common\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\declarations.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -81,6 +86,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\ng-inputs\routes.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\resources\services\resourceService.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\dialog\dialog.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -136,6 +142,11 @@
     <None Update="ClientApp\src\app\shared\models\iIdNamePair.js.map">
       <DependentUpon>iIdNamePair.js</DependentUpon>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\dictionaries\models\" />
+    <Folder Include="ClientApp\src\app\resources\models\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

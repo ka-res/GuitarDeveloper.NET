@@ -1,0 +1,35 @@
+<div class="k-block k-shadow" style="margin-bottom: 10px">
+  <form [formGroup]="criteriaForm" (ngSubmit)="onSubmit()" class="k-form-inline" style="display: flex">
+    <fieldset style="width: 100%">
+      <legend>Add resource</legend>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="gd-10-bottom-set">
+            <div class="k-form-field">
+              <span>Name</span>
+              <kendo-dropdownlist [data]="names"
+                                  formControlName="name"
+              </kendo-dropdownlist>
+            </div>
+          </div>
+          <div class="gd-10-bottom-set">
+            <div class="k-form-field">
+              <span>Valaue</span>
+              <kendo-dropdownlist [data]="values"
+                                  formControlName="value"
+              </kendo-dropdownlist>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12" style="margin-top: 10px">
+            <button class="k-button" type="button" style="float: right"
+                    (click)="closeForm(true, true)">Cancel</button>
+            <button class="k-button k-primary" type="submit"
+                    style="background-color: rgb(153, 117, 101);border-color: rgb(153, 117, 101);margin-right: 10px;float: right">Add</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

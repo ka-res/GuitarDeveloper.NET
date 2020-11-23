@@ -1,0 +1,24 @@
+<div>
+  <h4>Dictionary panel</h4>
+</div>
+<div style="height: 10px">
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <div *ngIf="vm.length > 0">
+      <kendo-panelbar [items]="vm" (stateChange)="onPanelStateChange($event)">
+        <div *kendoPanelBarItemTemplate let="dataItem">
+          <div [class]="'custom-template'">
+            <p>{{dataItem}}</p>
+          </div>
+        </div>
+      </kendo-panelbar>
+    </div>
+  </div>
+  <div class="cols-sm-9" *ngIf="dictionariesFocus.length > 0">
+    <div *ngIf="selectedDictionary !== null">
+      <app-dictionary-register [selectedDictionaryType]="selectedDictionary.type"></app-dictionary-register>
+    </div>
+  </div>
+</div>
